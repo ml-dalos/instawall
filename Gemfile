@@ -15,6 +15,12 @@ gem 'devise'
 gem 'sass-rails', '>= 6'
 #  Bootstrap 3
 gem 'bootstrap', '~> 4.4.1'
+# For uploading images
+gem 'carrierwave', '~> 2.0'
+gem "fog", "~> 1.27"
+
+# Resizing images
+gem 'mini_magick'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -44,6 +50,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Local ENV vars
+  gem 'figaro'
 end
 
 group :test do
