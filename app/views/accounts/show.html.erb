@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-4 align-content-center">
-      <%= image_tag @account.avatar.url, width: '200px', class: 'avatar' %>
+      <%= image_tag @account.avatar.url, width: '200px', class: 'avatar' if @account.avatar.present? %>
     </div>
     <div class="col-8 text-left">
       <h1><%= @account.username %></h1>
@@ -10,12 +10,13 @@
       <div class="profile-stats"><%= @account.total_followers %> followers</div>
       <div class="profile-stats"><%= @account.total_following %> following</div>
 
+
       <p><strong><%= @account.full_name %></strong></p>
       <%= simple_format @account.description %>
       <p><%= link_to @account.website if @account.website.present? %></p>
     </div>
   </div>
-  <hr />
+  <hr/>
   <div class="row profile-posts">
     <% @posts.each do |post| %>
       <div class="col-4">
