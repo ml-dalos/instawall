@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'accounts#index'
   root to: 'home#index'
+  resources :posts, only: %i[new show create]
 end

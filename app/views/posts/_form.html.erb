@@ -1,0 +1,6 @@
+<%= form_for @post, html: { multipart: true } do |form| %>
+  <%= form.file_field :image,  class: 'form-control' %>
+  <%= form.hidden_field :image_cache %>
+
+  <%= form.submit 'Save post', class: 'btn btn-success'%>
+<% end %>git rre
