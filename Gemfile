@@ -15,6 +15,8 @@ gem 'devise'
 gem 'sass-rails', '>= 6'
 #  Bootstrap 3
 gem 'bootstrap', '~> 4.4.1'
+# Font Awesome icons
+gem 'font-awesome-sass', '~> 5.12.0'
 # For uploading images
 gem 'carrierwave', '~> 2.0'
 gem "fog", "~> 1.27"
@@ -65,3 +67,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'pry-byebug'

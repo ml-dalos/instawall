@@ -21,4 +21,18 @@
 .post-details {
   background-color: #ffffff;
   padding: 15px;
+  border: 1px solid #dddddd;
+}
+
+.post-actions {
+  margin-bottom: 15px;
+
+  .post-like, .post-comment, .liked {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  .post-like:hover, .liked {
+    color: #B00100;
+  }
 }

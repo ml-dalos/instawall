@@ -7,6 +7,7 @@ class Account < ApplicationRecord
 
   mount_uploader :avatar, ImageUploader
   has_many :posts
+  has_many :likes
 
   def full_name
     [first_name, last_name].compact.join(' ')

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AccountsController < ApplicationController
   before_action :authenticate_account!
   before_action :set_account, only: %i[show]
