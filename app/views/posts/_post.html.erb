@@ -16,7 +16,22 @@
     <p>
       <strong><%= link_to post.account.username, profile_path(post.account.username), class: 'text-dark' %></strong>
     </p>
-    <%= simple_format post.description %>
+    <%= simple_format post.description || '...' %>
+
+    <%= render post.comments %>
     <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
+  </div>
+  <div class="comment-box">
+    <%= form_for @comment do |f| %>
+      <%= f.hidden_field :post_id, value: post.id %>
+      <%= f.hidden_field :account_id, value: current_account.id %>
+      <div class="input-group">
+        <%= f.text_field :comment, placeholder: 'Add comment...', class: 'form-control comment-input' %>
+        <div class="input-group-append">
+
+          <%= f.submit 'Post', class: 'btn btn-outline-secondary' %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

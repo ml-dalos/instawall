@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post '/follow', to: 'accounts#follow', as: :follow
   root to: 'home#index'
   resources :posts, only: %i[new show create]
+  resources :comments, only: %i[create]
 end
