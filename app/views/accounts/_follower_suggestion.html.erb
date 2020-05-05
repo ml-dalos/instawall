@@ -1,0 +1,16 @@
+<div class="suggest">
+  <div class="row">
+    <div class="col-sm-3 col-lg-2">
+      <%= link_to avatar(follower_suggestion, type: :thumb), profile_path(follower_suggestion.username) %>
+    </div>
+    <div class="cols-sm-9 col-lg-10">
+      <%= form_tag follow_path, class:'float-right' do %>
+        <%= hidden_field_tag :follow_id, follower_suggestion.id %>
+        <%= submit_tag 'Follow', class: 'btn btn-link text-muted' %>
+      <% end %>
+
+      <%= link_to follower_suggestion.username, profile_path(follower_suggestion.username), class: 'text-dark' %>
+      <p class="text-muted"><%= follower_suggestion.created_at > 1.day.ago ? 'New user' : 'Just recommendation' %></p>
+    </div>
+  </div>
+</div>

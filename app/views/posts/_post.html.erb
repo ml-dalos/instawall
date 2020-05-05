@@ -1,0 +1,22 @@
+<div class="post">
+  <div class="post-meta">
+    <%= link_to(avatar(post.account, type: :thumb), profile_path(post.account.username)) %>
+    <%= link_to post.account.username, profile_path(post.account.username), class: 'text-dark' %>
+  </div>
+  <%= image_tag post.image.url, class: 'img img-fluid' %>
+
+  <div class="post-details">
+
+    <div class="post-actions">
+      <%= like_button(post_id: post.id, account_id: current_account.id) %>
+      <%= icon 'far', 'comment', class: "fa-lg post-comment" %>
+    </div>
+
+    <p class="likes-count font-weight-bold" data-id="<%= post.id %>"><%= post.likes_count %> likes</p>
+    <p>
+      <strong><%= link_to post.account.username, profile_path(post.account.username), class: 'text-dark' %></strong>
+    </p>
+    <%= simple_format post.description %>
+    <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
+  </div>
+</div>
