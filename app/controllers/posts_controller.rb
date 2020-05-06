@@ -16,8 +16,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:account).find(params[:id])
     @comment = Comment.new
+    @comments = Comment.includes(:account).where(post_id: @post.id)
   end
 
   private

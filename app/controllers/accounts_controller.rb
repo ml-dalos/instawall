@@ -6,7 +6,7 @@ class AccountsController < ApplicationController
 
   def index
     # user feed
-    @posts = Post.active
+    @posts = Post.active.includes(:account, :comments, :likes)
     @comment = Comment.new
 
     following_ids = Follower.where(follower_id: current_account.id).map(&:following_id)
