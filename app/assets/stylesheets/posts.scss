@@ -46,3 +46,25 @@
 .comment-input:focus {
   box-shadow: none !important;
 }
+
+.comments-overflow {
+  height: 100px;
+  overflow-y: scroll;
+}
+
+.post-stats {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: #ffffff;
+  display: none;
+
+  .inner {
+    padding-top: 45%;
+  }
+}
+
+.nounderline {
+  text-decoration: none !important
+}

@@ -16,4 +16,7 @@ $(function () {
            $(`.likes-count[data-id=${post_id}]`).text(`${responce["likes_count"]} likes`)
        });
    });
+    $(document).on("click", '.post-comment-show', function () {
+        $('.comment-input').focus();
+    });
 });

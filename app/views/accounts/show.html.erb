@@ -4,11 +4,12 @@
       <%= avatar @account, width: '200px' %>
     </div>
     <div class="col-8 text-left">
-
-      <h1><%= @account.username %></h1>
-
-      <%= link_to 'Edit profile', edit_account_registration_path, class: 'btn btn-outline-secondary form-group' if can_edit_profile?(@account.id) %>
-
+      <div class="row">
+        <div class="col-5">
+          <%= link_to 'Edit profile', edit_account_registration_path, class: 'btn btn-outline-secondary float-right' if can_edit_profile?(@account.id) %>
+          <h1><%= @account.username %></h1>
+        </div>
+      </div>
 
       <div class="row profile-stats">
         <div class="col-4"><%= @account.posts.count %> posts</div>
@@ -26,8 +27,15 @@
   <div class="row profile-posts">
     <% @posts.each do |post| %>
       <div class="col-4">
-        <div class="post">
-          <%= image_tag post.image.url, class: 'img img-fluid' %>
+        <div class="post" style="background: url(<%= post.image.url %>) no-repeat center top">
+          <%= link_to post_path(post), class: 'nounderline' do %>
+            <div class="post-stats">
+              <div class="inner">
+                <%= post.likes_count %> <%= icon('far', 'heart', class: 'fa-lg') %>
+                <%= post.comments_count %> <%= icon('far', 'comment', class: 'fa-lg') %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>

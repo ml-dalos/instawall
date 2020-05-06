@@ -6,11 +6,12 @@
     <div class="col-4">
       <div class="account-summary">
         <p>
-          <%= link_to avatar(current_account, type: :thumb), profile_path(current_account.username) %>
+          <%= link_to avatar(current_account, type: :thumb), profile_path(current_account.username), class: 'float-left mr-2' %>
           <%= link_to current_account.username, profile_path(current_account.username), class: "font-weight-bold text-dark" %>
+          <br />
+          <%= current_account.full_name %>
           <br/>
         </p>
-        <p><%= current_account.full_name %></p>
       </div>
       <div class="follower-suggestions">
         <%= link_to 'View all', '#', class: "float-right text-dark" %>

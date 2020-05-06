@@ -30,4 +30,16 @@ body {
 
 .profile-posts {
   margin-top: 15px;
+
+  .post {
+    height: 300px;
+    overflow: hidden;
+    background-size: cover !important;
+  }
+
+  .post:hover {
+    .post-stats {
+      display: block;
+    }
+  }
 }

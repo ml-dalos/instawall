@@ -9,7 +9,7 @@
 
     <div class="post-actions">
       <%= like_button(post_id: post.id, account_id: current_account.id) %>
-      <%= icon 'far', 'comment', class: "fa-lg post-comment" %>
+      <%= link_to icon('far', 'comment', class: "fa-lg post-comment"), post_path(post), class: 'text-dark' %>
     </div>
 
     <p class="likes-count font-weight-bold" data-id="<%= post.id %>"><%= post.likes_count %> likes</p>
@@ -18,7 +18,8 @@
     </p>
     <%= simple_format post.description || '...' %>
 
-    <%= render post.comments %>
+    <%= render post.comments[0..3] %>
+    <%= link_to "View all #{post.comments_count} comments", post_path(post), class: 'text-muted' if post.comments_count > 4 %>
     <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
   </div>
   <div class="comment-box">
@@ -29,7 +30,7 @@
         <%= f.text_field :comment, placeholder: 'Add comment...', class: 'form-control comment-input' %>
         <div class="input-group-append">
 
-          <%= f.submit 'Post', class: 'btn btn-outline-secondary' %>
+          <%= f.submit 'Save', class: 'btn btn-outline-secondary' %>
         </div>
       </div>
     <% end %>

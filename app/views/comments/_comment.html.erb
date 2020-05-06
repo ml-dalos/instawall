@@ -1,4 +1,6 @@
 <div class="comment">
-  <strong><%= comment.account.username %></strong>
+  <%= link_to(avatar(comment.account, type: :thumb, width: '30px'), profile_path(comment.account.username)) %>
+  <strong><%= link_to comment.account.username, profile_path(comment.account.username), class: 'text-dark' %></strong>
   <%= comment.comment %>
+  <p class="text-muted"><%= time_ago_in_words(comment.created_at) %> ago</p>
 </div>

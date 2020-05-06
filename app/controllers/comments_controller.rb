@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     else
       flash[:error] = 'Comment was not saved!'
     end
-    redirect_to dashboard_path
+    redirect_back(fallback_location: '')
   end
 
   private
