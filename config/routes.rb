@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :accounts
+  devise_for :accounts, controllers: { omniauth_callbacks: 'callbacks' }
 
   get '/dashboard', to: 'accounts#index'
   get '/profile/:username', to: 'accounts#show', as: :profile

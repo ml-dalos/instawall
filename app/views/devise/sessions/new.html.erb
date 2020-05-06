@@ -21,6 +21,9 @@
   <div class="form-group">
     <%= f.submit "Log in", class: 'btn btn-primary' %>
   </div>
+
+  <%= link_to 'Sign in with GitHub', account_github_omniauth_authorize_path, class: 'btn btn-dark' %>
+
 <% end %>
 
 <%= render "devise/shared/links" %>

@@ -11,6 +11,8 @@ gem 'pg', '~> 0.18.4'
 gem 'puma', '~> 4.1'
 # user auth
 gem 'devise'
+# user auth with github
+gem 'omniauth-github'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 #  Bootstrap 3
